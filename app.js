@@ -245,12 +245,27 @@ const products = [
 
 const div = document.querySelector(`div`);
 
+// for (const interator of products){
+//     console.log(interator);
+//     div.innerHTML += `
+//     <h1>${interator}</h1>
+//     `
+// }
+
+for (let i = 0; i < products.length; i++) {
+    // console.log(products);
+    div.innerHTML += `
+    <h1>${products[i]}</h1>
+    `
+    
+}
+
 
 products.map((item) => {
-    console.log(item.category);
-    div.innerhtml +=`
-    <h1>Product Name: ${item.brand} ${item.name}</h1>
-    <h1> Catergory: ${item.category}</h1>
+    // console.log(item.category);
+    div.innerhtml += `
+    <h1>Products Name: ${item.brand} ${item.name}</h1>
+    <h1> Category: ${item.category}</h1>
     <h1> Price: ${item.price}</h1>
 
     <hr/>
@@ -264,8 +279,8 @@ const filteredItems = (btn) =>{
     console.log(btn.innerhtml);
     const filtered = products.filter(item => item.category === btn.innerhtml).map(item => {
     div.innerHTML += `
-    <h1>Product Name: ${item.brand} ${item.name}</h1>
-    <h1> Catergory: ${item.category}</h1>
+    <h1>Products Name: ${item.brand} ${item.name}</h1>
+    <h1> Category: ${item.category}</h1>
     <h1> Price: ${item.price}</h1>
 
     <hr/>
