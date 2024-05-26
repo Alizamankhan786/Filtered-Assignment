@@ -243,9 +243,7 @@ const products = [
 
 // }
 
-const btn = document.querySelector(`#btn1`)
-
-const div = document.querySelector(`div`);
+const div = document.querySelector(`#start`);
 
 
 
@@ -260,9 +258,9 @@ for (let i = 0; i < products.length; i++) {
     // console.log(products);
     div.innerHTML += `
     <h1 class="text-center text-light mt-4"> Name: ${products[i].name}</h1>
-    <h1 class=" text-center text-light"> Price: ${products[i].price}</h1>
-    <h1 class=" text-center text-light"> Category: ${products[i].category}</h1>
-    <h1 class=" text-center text-light"> Brand: ${products[i].brand}</h1>
+    <h2 class=" text-center text-light"> Price: ${products[i].price}</h2>
+    <h2 class=" text-center text-light"> Category: ${products[i].category}</h3>
+    <h2 class=" text-center text-light"> Brand: ${products[i].brand}</h3>
 
     <hr/ class="text-light">
     `
@@ -270,27 +268,29 @@ for (let i = 0; i < products.length; i++) {
 }
 
 
-// products.map((item) => {
-//     // console.log(item.category);
-//     div.innerhtml += `
-//     <h1>Products Name: ${item.brand} ${item.name}</h1>
-//     <h1> Category: ${item.category}</h1>
-//     <h1> Price: ${item.price}</h1>
+products.map((items) => {
+    // console.log(item.category);
+    div.innerhtml += `
+    <h1>Products Name: ${items.name} </h1>
+    <h2>Price: ${items.price}</h2>
+    <h3> Category: ${items.category}</h3>
+    <h3> Price: ${items.brand}</h3>
 
-//     <hr/>
-//     `
+    <hr/>
+    `
 
-// })
+})
 
 
 const filteredItems = (btn) =>{
     div.innerHTML = ``
     console.log(btn.innerhtml);
-    const filtered = products.filter(item => item.category === btn.innerhtml).map(item => {
+    const filtered = products.filter(items => items.category === btn.innerhtml).map((items) => {
     div.innerHTML += `
-    <h1>Products Name: ${item.brand} ${item.name}</h1>
-    <h1> Category: ${item.category}</h1>
-    <h1> Price: ${item.price}</h1>
+    <h1>Products Name: ${items.name} </h1>
+    <h2>Price: ${items.price}</h2>
+    <h3> Category: ${items.category}</h3>
+    <h3> Price: ${items.brand}</h3>
 
     <hr/>
 
